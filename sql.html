@@ -1,0 +1,14 @@
+SELECT osd.name FROM kg_product_option_value AS pov 
+LEFT JOIN kg_option_value AS ov 
+ON pov.option_value_id=ov.option_value_id
+LEFT JOIN kg_option_size AS os ON os.option_size_id = ov.option_size_id
+LEFT JOIN kg_option_size_description osd ON osd.option_size_id=os.option_size_id
+WHERE pov.product_id=399
+AND osd.language_id=1
+GROUP BY os.option_size_id
+
+SELECT * FROM kg_option_value WHERE option_value_id IN(192,191)
+
+SELECT * FROM kg_product_option WHERE option_id=16 AND product_id=399
+
+SELECT * FROM kg_option WHERE option_id=16
